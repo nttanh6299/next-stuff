@@ -55,8 +55,77 @@
   }
 }
 
+html,
+body {
+  cursor: none;
+}
+
 #image {
   height: 256px;
   width: 256px;
   background: url("/sprite.webp") 0px 0px;
+}
+
+.cursor-container,
+.cursor-container-2 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.cursor-container ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.cursor-container ul li {
+  color: #fff;
+  font-size: 5rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  display: inline-block;
+}
+
+.cursor-container ul li:hover ~ .cursor {
+  transform: scale(6);
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+.hover-this span {
+  color: #fff;
+  font-size: 5rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  display: inline-block;
+  transition: transform 0.1s ease;
+}
+
+.cursor-container-2 ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hover-this:hover ~ .cursor {
+  transform: scale(6);
 }
